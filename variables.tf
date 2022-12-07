@@ -10,6 +10,12 @@ variable "vpc_id" {
   default     = null
 }
 
+variable "initial_vpc_id" {
+  type        = string
+  description = "The VPC ID used for service discovery namespace creation when you are not the owner if var.vpc_id. You can later on authorize the vpc to hosted zone association and tell the vpc owner to assign your hosted zone to the vpc."
+  default     = null
+}
+
 variable "max_size" {
   type        = number
   description = "The upper limit of instances the cluster can scale up to"
@@ -56,12 +62,22 @@ variable "whitelist" {
     "c5n.xlarge",
     "c5n.2xlarge",
     "c5n.4xlarge",
+    "c6a.large",
+    "c6i.large",
+    "c6a.xlarge",
+    "c6i.xlarge",
+    "c6a.2xlarge",
+    "c6i.2xlarge",
+    "c6a.4xlarge",
+    "c6i.4xlarge",
     "g4dn.xlarge",
     "g4dn.2xlarge",
     "i3.large",
     "i3.xlarge",
     "i3en.large",
     "i3en.xlarge",
+    "i4i.large",
+    "i4i.xlarge",
     "inf1.xlarge",
     "inf1.2xlarge",
     "m4.large",
@@ -85,6 +101,12 @@ variable "whitelist" {
     "m5n.large",
     "m5n.xlarge",
     "m5n.2xlarge",
+    "m6i.large",
+    "m6i.xlarge",
+    "m6i.2xlarge",
+    "m6a.large",
+    "m6a.xlarge",
+    "m6a.2xlarge",
     "r4.large",
     "r4.xlarge",
     "r5.large",
@@ -101,6 +123,10 @@ variable "whitelist" {
     "r5dn.xlarge",
     "r5n.large",
     "r5n.xlarge",
+    "r6i.large",
+    "r6i.xlarge",
+    "r6a.large",
+    "r6a.xlarge",
     "z1d.large",
     "z1d.xlarge",
   ]
@@ -109,7 +135,13 @@ variable "whitelist" {
 variable "key_pair" {
   type        = string
   description = "The key pair to attach the instances"
-  default     = "ecs-temp"
+  default     = "ecs"
+}
+
+variable "create_key_pair" {
+  type        = string
+  description = "Whether to create the key pair to attach the instances"
+  default     = true
 }
 
 variable "autoscaler_headroom_cpu_per_unit" {

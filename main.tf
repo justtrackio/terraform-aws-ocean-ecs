@@ -1,6 +1,7 @@
 locals {
-  is_auto_config           = var.autoscaler_headroom_cpu_per_unit == null && var.autoscaler_headroom_memory_per_unit == null && var.autoscaler_headroom_num_of_units == null
-  auto_headroom_percentage = local.is_auto_config ? var.autoscaler_auto_headroom_percentage : null
+  is_auto_config                = var.autoscaler_headroom_cpu_per_unit == null && var.autoscaler_headroom_memory_per_unit == null && var.autoscaler_headroom_num_of_units == null
+  auto_headroom_percentage      = local.is_auto_config ? var.autoscaler_auto_headroom_percentage : null
+  service_discovery_hosted_zone = "${module.this.environment}.${module.this.stage}"
 }
 
 resource "aws_ecs_cluster" "default" {
@@ -94,4 +95,22 @@ EOF
     key   = "Orchestrator"
     value = "ecs"
   }
+}
+
+resource "aws_service_discovery_private_dns_namespace" "main" {
+  name = local.service_discovery_hosted_zone
+  vpc  = var.initial_vpc_id
+
+  tags = module.this.tags
+}
+
+resource "aws_route53_vpc_association_authorization" "auth" {
+  vpc_id  = var.vpc_id
+  zone_id = data.aws_route53_zone.service_discovery.zone_id
+}
+
+resource "aws_route53_zone_association" "assoc" {
+  provider = aws.owner
+  vpc_id   = aws_route53_vpc_association_authorization.auth.vpc_id
+  zone_id  = aws_route53_vpc_association_authorization.auth.zone_id
 }

@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.1.0...v1.2.0) (2022-12-08)
+
+
+### Features
+
+* Added terraform docs placeholders ([#5](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/5)) ([b8a80cc](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/b8a80cc224ee1127150107f5b184f7a98c8a0910))
+
+
+### Bug Fixes
+
+* Outputs produced an error when create_key_pair was false ([#6](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/6)) ([f38e0f8](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/f38e0f8800d4e25c3500e822be2c7d2a40eb99fd))
+
 ## [1.1.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.0.0...v1.1.0) (2022-12-07)
 
 

@@ -5,15 +5,15 @@ terraform {
       configuration_aliases = [
         aws.owner,
       ]
-      version = "4.45.0"
+      version = ">= 4.45.0"
     }
     spotinst = {
       source  = "spotinst/spotinst"
-      version = "1.87.1"
+      version = ">= 1.87.1"
     }
     tls = {
       source  = "hashicorp/tls"
-      version = "4.0.4"
+      version = ">= 4.0.4"
     }
   }
   required_version = ">= 1.3.6"

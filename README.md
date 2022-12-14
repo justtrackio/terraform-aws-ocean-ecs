@@ -7,18 +7,18 @@ Terraform module which creates an spotinst ocean ecs cluster
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.6 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 4.45.0 |
-| <a name="requirement_spotinst"></a> [spotinst](#requirement\_spotinst) | 1.87.1 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | 4.0.4 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.45.0 |
+| <a name="requirement_spotinst"></a> [spotinst](#requirement\_spotinst) | >= 1.87.1 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.4 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.45.0 |
-| <a name="provider_aws.owner"></a> [aws.owner](#provider\_aws.owner) | 4.45.0 |
-| <a name="provider_spotinst"></a> [spotinst](#provider\_spotinst) | 1.87.1 |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | 4.0.4 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.45.0 |
+| <a name="provider_aws.owner"></a> [aws.owner](#provider\_aws.owner) | >= 4.45.0 |
+| <a name="provider_spotinst"></a> [spotinst](#provider\_spotinst) | >= 1.87.1 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | >= 4.0.4 |
 
 ## Modules
 
@@ -31,20 +31,20 @@ Terraform module which creates an spotinst ocean ecs cluster
 
 | Name | Type |
 |------|------|
-| [aws_ecs_cluster.default](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/ecs_cluster) | resource |
-| [aws_iam_instance_profile.default](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/iam_instance_profile) | resource |
-| [aws_iam_role.default](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_iam_role_policy_attachment.amazon_ec2_container_service_for_ec2_role](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_key_pair.ecs](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/key_pair) | resource |
-| [aws_route53_vpc_association_authorization.auth](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/route53_vpc_association_authorization) | resource |
-| [aws_route53_zone_association.assoc](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/route53_zone_association) | resource |
-| [aws_service_discovery_private_dns_namespace.main](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/resources/service_discovery_private_dns_namespace) | resource |
-| [spotinst_ocean_ecs.default](https://registry.terraform.io/providers/spotinst/spotinst/1.87.1/docs/resources/ocean_ecs) | resource |
-| [tls_private_key.ecs](https://registry.terraform.io/providers/hashicorp/tls/4.0.4/docs/resources/private_key) | resource |
-| [aws_iam_policy_document.assume_role](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/data-sources/iam_policy_document) | data source |
-| [aws_route53_zone.service_discovery](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/data-sources/route53_zone) | data source |
-| [aws_ssm_parameter.image_id](https://registry.terraform.io/providers/hashicorp/aws/4.45.0/docs/data-sources/ssm_parameter) | data source |
+| [aws_ecs_cluster.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ecs_cluster) | resource |
+| [aws_iam_instance_profile.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
+| [aws_iam_role.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.amazon_ec2_container_registry_read_only](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.amazon_ec2_container_service_for_ec2_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_key_pair.ecs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/key_pair) | resource |
+| [aws_route53_vpc_association_authorization.auth](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_vpc_association_authorization) | resource |
+| [aws_route53_zone_association.assoc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone_association) | resource |
+| [aws_service_discovery_private_dns_namespace.main](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/service_discovery_private_dns_namespace) | resource |
+| [spotinst_ocean_ecs.default](https://registry.terraform.io/providers/spotinst/spotinst/latest/docs/resources/ocean_ecs) | resource |
+| [tls_private_key.ecs](https://registry.terraform.io/providers/hashicorp/tls/latest/docs/resources/private_key) | resource |
+| [aws_iam_policy_document.assume_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_route53_zone.service_discovery](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/route53_zone) | data source |
+| [aws_ssm_parameter.image_id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ssm_parameter) | data source |
 
 ## Inputs
 

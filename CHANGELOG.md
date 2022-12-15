@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.2.1](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.2.0...v1.2.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* Allow version range instead of fixed version ([#7](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/7)) ([2cd8dfa](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/2cd8dfaab69bd1061979ca638e0ef09b15860d04))
+
 ## [1.2.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.1.0...v1.2.0) (2022-12-08)
 
 

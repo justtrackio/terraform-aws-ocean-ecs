@@ -1,7 +1,6 @@
 locals {
-  is_auto_config                = var.autoscaler_headroom_cpu_per_unit == null && var.autoscaler_headroom_memory_per_unit == null && var.autoscaler_headroom_num_of_units == null
-  auto_headroom_percentage      = local.is_auto_config ? var.autoscaler_auto_headroom_percentage : null
-  service_discovery_hosted_zone = "${module.this.environment}.${module.this.namespace}"
+  is_auto_config           = var.autoscaler_headroom_cpu_per_unit == null && var.autoscaler_headroom_memory_per_unit == null && var.autoscaler_headroom_num_of_units == null
+  auto_headroom_percentage = local.is_auto_config ? var.autoscaler_auto_headroom_percentage : null
 }
 
 resource "aws_ecs_cluster" "default" {
@@ -98,7 +97,7 @@ EOF
 }
 
 resource "aws_service_discovery_private_dns_namespace" "main" {
-  name = local.service_discovery_hosted_zone
+  name = var.service_discovery_private_dns_name
   vpc  = var.initial_vpc_id
 
   tags = module.this.tags

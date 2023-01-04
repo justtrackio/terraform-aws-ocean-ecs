@@ -28,6 +28,12 @@ variable "min_size" {
   default     = 1
 }
 
+variable "service_discovery_private_dns_name" {
+  type        = string
+  description = "The name of the namespace"
+  default     = null
+}
+
 variable "subnet_ids" {
   type        = list(string)
   description = "A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip"

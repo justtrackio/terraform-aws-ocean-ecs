@@ -15,7 +15,7 @@ resource "aws_ecs_cluster" "default" {
 resource "spotinst_ocean_ecs" "default" {
   name         = module.this.id
   cluster_name = module.this.id
-  region       = var.region
+  region       = var.aws_region
   max_size     = var.max_size
   min_size     = var.min_size
   subnet_ids   = var.subnet_ids

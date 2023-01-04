@@ -1,7 +1,6 @@
 locals {
-  is_auto_config                = var.autoscaler_headroom_cpu_per_unit == null && var.autoscaler_headroom_memory_per_unit == null && var.autoscaler_headroom_num_of_units == null
-  auto_headroom_percentage      = local.is_auto_config ? var.autoscaler_auto_headroom_percentage : null
-  service_discovery_hosted_zone = "${module.this.environment}.${module.this.stage}"
+  is_auto_config           = var.autoscaler_headroom_cpu_per_unit == null && var.autoscaler_headroom_memory_per_unit == null && var.autoscaler_headroom_num_of_units == null
+  auto_headroom_percentage = local.is_auto_config ? var.autoscaler_auto_headroom_percentage : null
 }
 
 resource "aws_ecs_cluster" "default" {
@@ -16,7 +15,7 @@ resource "aws_ecs_cluster" "default" {
 resource "spotinst_ocean_ecs" "default" {
   name         = module.this.id
   cluster_name = module.this.id
-  region       = var.region
+  region       = var.aws_region
   max_size     = var.max_size
   min_size     = var.min_size
   subnet_ids   = var.subnet_ids
@@ -98,7 +97,7 @@ EOF
 }
 
 resource "aws_service_discovery_private_dns_namespace" "main" {
-  name = local.service_discovery_hosted_zone
+  name = var.service_discovery_private_dns_name
   vpc  = var.initial_vpc_id
 
   tags = module.this.tags

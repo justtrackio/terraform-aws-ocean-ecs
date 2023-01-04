@@ -6,12 +6,10 @@ module "example" {
     aws.owner = aws.owner
   }
 
-  label_order    = ["name"]
-  name           = "ecs-cluster"
-  vpc_id         = "vpc-1245f04ef5690379a"
-  initial_vpc_id = "vpc-2c1a11081fd686d0d"
-  subnet_ids     = ["subnet-04016197c1fb0e3bf", "subnet-0540fa26a2ae5553a", "subnet-012ca55fcddf605af"]
-  region         = "eu-central-1"
-  stage          = "stage"
-  environment    = "env"
+  name                               = "foo"
+  vpc_id                             = "vpc-00000000000000000"
+  initial_vpc_id                     = "vpc-00000000000000000"
+  subnet_ids                         = ["subnet-00000000000000000", "subnet-11111111111111111", "subnet-22222222222222222"]
+  aws_region                         = "eu-central-1"
+  service_discovery_private_dns_name = "foo.baa"
 }

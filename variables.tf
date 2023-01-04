@@ -1,4 +1,4 @@
-variable "region" {
+variable "aws_region" {
   type        = string
   description = "The region the cluster will run in"
   default     = null
@@ -26,6 +26,12 @@ variable "min_size" {
   type        = number
   description = "The lower limit of instances the cluster can scale down to"
   default     = 1
+}
+
+variable "service_discovery_private_dns_name" {
+  type        = string
+  description = "The name of the namespace"
+  default     = null
 }
 
 variable "subnet_ids" {

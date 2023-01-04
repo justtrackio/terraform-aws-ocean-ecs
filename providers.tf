@@ -1,1 +1,3 @@
-provider "aws" { alias = "owner" }
+provider "aws" {
+  alias = "owner"
+}

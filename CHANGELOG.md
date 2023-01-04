@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.3.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.2.1...v1.3.0) (2023-01-04)
+
+
+### Features
+
+* Adjust provider config ([#8](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/8)) ([a60ef67](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/a60ef67786fdf764d9ff8952df0a39eb211a87cc))
+
 ## [1.2.1](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.2.0...v1.2.1) (2022-12-15)
 
 

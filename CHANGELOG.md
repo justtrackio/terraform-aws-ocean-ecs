@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.3.0...v1.4.0) (2023-01-05)
+
+
+### Features
+
+* Added ecs cluster name to outputs ([#10](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/10)) ([1ef0dd6](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/1ef0dd6f156f29d5b52ca1824d9cc1b1db89b2ed))
+
 ## [1.3.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.2.1...v1.3.0) (2023-01-04)
 
 

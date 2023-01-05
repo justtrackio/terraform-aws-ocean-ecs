@@ -8,6 +8,11 @@ output "ecs_cluster_arn" {
   description = "Arn of the ecs cluster"
 }
 
+output "ecs_cluster_name" {
+  value       = aws_ecs_cluster.default.name
+  description = "Name of the ecs cluster"
+}
+
 output "service_discovery_dns_namespace_id" {
   value       = aws_service_discovery_private_dns_namespace.main.id
   description = "ID of the discovery namespace"

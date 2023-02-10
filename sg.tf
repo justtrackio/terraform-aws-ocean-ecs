@@ -1,6 +1,6 @@
 module "sg" {
   source  = "cloudposse/security-group/aws"
-  version = "1.0.1"
+  version = "2.0.0"
 
   attributes = ["ecs-cluster"]
 

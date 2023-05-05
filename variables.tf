@@ -1,9 +1,3 @@
-variable "aws_region" {
-  type        = string
-  description = "The region the cluster will run in"
-  default     = null
-}
-
 variable "vpc_id" {
   type        = string
   description = "The VPC ID"
@@ -172,4 +166,34 @@ variable "autoscaler_auto_headroom_percentage" {
   type        = number
   description = "The auto-headroom percentage. Set a number between 0-200 to control the headroom % of the cluster. Relevant when isAutoConfig=true"
   default     = 10
+}
+
+variable "ocean_image_id_ssm_parameter" {
+  type        = string
+  description = "SSM Parameter name which contains the AMI ID, defaults to official latest bottlerocket ami"
+  default     = "/aws/service/bottlerocket/aws-ecs-1/x86_64/latest/image_id"
+}
+
+variable "ecs_allow_privileged_containers" {
+  type        = bool
+  description = "Whether or not to allow privileged containers, defaults to true"
+  default     = true
+}
+
+variable "ecs_enable_spot_instance_draining" {
+  type        = bool
+  description = "Whether or not to enable spot instance draining, defaults to true"
+  default     = true
+}
+
+variable "ocean_update_policy_should_roll" {
+  default     = true
+  type        = bool
+  description = "Whether or not a change to the ocean should roll the cluster"
+}
+
+variable "metrics_send_metrics" {
+  default     = false
+  type        = bool
+  description = "Whether or not send anonymous metrics"
 }

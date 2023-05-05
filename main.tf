@@ -22,13 +22,13 @@ resource "spotinst_ocean_ecs" "default" {
   whitelist    = var.whitelist
 
   user_data = <<EOF
-#!/bin/bash
-echo ECS_CLUSTER=${module.this.id} >> /etc/ecs/ecs.config
-echo ECS_AVAILABLE_LOGGING_DRIVERS=[\"none\", \"awslogs\", \"fluentd\"] >> /etc/ecs/ecs.config
-echo ECS_POLL_METRICS=true >> /etc/ecs/ecs.config
-echo ECS_ENABLE_CONTAINER_METADATA=true >> /etc/ecs/ecs.config
-echo ECS_ENABLE_TASK_IAM_ROLE=true >> /etc/ecs/ecs.config
-echo ECS_ENABLE_SPOT_INSTANCE_DRAINING=true >> /etc/ecs/ecs.config
+[settings.ecs]
+cluster = "${module.this.id}"
+allow-privileged-containers = ${var.ecs_allow_privileged_containers}
+enable-spot-instance-draining = ${var.ecs_enable_spot_instance_draining}
+
+[settings.metrics]
+send-metrics = ${var.metrics_send_metrics}
 EOF
 
   security_group_ids   = [module.sg.id]
@@ -77,7 +77,7 @@ EOF
   }
 
   update_policy {
-    should_roll      = true
+    should_roll      = var.ocean_update_policy_should_roll
     conditioned_roll = true
     auto_apply_tags  = true
     roll_config {

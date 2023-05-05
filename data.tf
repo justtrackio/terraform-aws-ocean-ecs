@@ -1,5 +1,5 @@
 data "aws_ssm_parameter" "image_id" {
-  name = "/aws/service/ecs/optimized-ami/amazon-linux-2/recommended/image_id"
+  name = var.ocean_image_id_ssm_parameter
 }
 
 data "aws_route53_zone" "service_discovery" {

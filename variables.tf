@@ -1,7 +1,43 @@
-variable "vpc_id" {
-  type        = string
-  description = "The VPC ID"
+variable "autoscaler_auto_headroom_percentage" {
+  type        = number
+  description = "The auto-headroom percentage. Set a number between 0-200 to control the headroom % of the cluster. Relevant when isAutoConfig=true"
+  default     = 10
+}
+
+variable "autoscaler_headroom_cpu_per_unit" {
+  type        = number
+  description = "Optionally configure the number of CPUs to allocate the headroom. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU"
   default     = null
+}
+
+variable "autoscaler_headroom_memory_per_unit" {
+  type        = number
+  description = "Optionally configure the amount of memory (MB) to allocate the headroom"
+  default     = null
+}
+
+variable "autoscaler_headroom_num_of_units" {
+  type        = number
+  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory"
+  default     = null
+}
+
+variable "create_key_pair" {
+  type        = string
+  description = "Whether to create the key pair to attach the instances"
+  default     = true
+}
+
+variable "ecs_allow_privileged_containers" {
+  type        = bool
+  description = "Whether or not to allow privileged containers, defaults to true"
+  default     = true
+}
+
+variable "ecs_enable_spot_instance_draining" {
+  type        = bool
+  description = "Whether or not to enable spot instance draining, defaults to true"
+  default     = true
 }
 
 variable "initial_vpc_id" {
@@ -10,16 +46,40 @@ variable "initial_vpc_id" {
   default     = null
 }
 
+variable "key_pair" {
+  type        = string
+  description = "The key pair to attach the instances"
+  default     = "ecs"
+}
+
 variable "max_size" {
   type        = number
   description = "The upper limit of instances the cluster can scale up to"
   default     = null
 }
 
+variable "metrics_send_metrics" {
+  default     = false
+  type        = bool
+  description = "Whether or not send anonymous metrics"
+}
+
 variable "min_size" {
   type        = number
   description = "The lower limit of instances the cluster can scale down to"
   default     = 1
+}
+
+variable "ocean_image_id_ssm_parameter" {
+  type        = string
+  description = "SSM Parameter name which contains the AMI ID, defaults to official latest bottlerocket ami"
+  default     = "/aws/service/bottlerocket/aws-ecs-1/x86_64/latest/image_id"
+}
+
+variable "ocean_update_policy_should_roll" {
+  default     = true
+  type        = bool
+  description = "Whether or not a change to the ocean should roll the cluster"
 }
 
 variable "service_discovery_private_dns_name" {
@@ -32,6 +92,12 @@ variable "subnet_ids" {
   type        = list(string)
   description = "A comma-separated list of subnet identifiers for the Ocean cluster. Subnet IDs should be configured with auto assign public ip"
   default     = []
+}
+
+variable "vpc_id" {
+  type        = string
+  description = "The VPC ID"
+  default     = null
 }
 
 variable "whitelist" {
@@ -130,70 +196,4 @@ variable "whitelist" {
     "z1d.large",
     "z1d.xlarge",
   ]
-}
-
-variable "key_pair" {
-  type        = string
-  description = "The key pair to attach the instances"
-  default     = "ecs"
-}
-
-variable "create_key_pair" {
-  type        = string
-  description = "Whether to create the key pair to attach the instances"
-  default     = true
-}
-
-variable "autoscaler_headroom_cpu_per_unit" {
-  type        = number
-  description = "Optionally configure the number of CPUs to allocate the headroom. CPUs are denoted in millicores, where 1000 millicores = 1 vCPU"
-  default     = null
-}
-
-variable "autoscaler_headroom_memory_per_unit" {
-  type        = number
-  description = "Optionally configure the amount of memory (MB) to allocate the headroom"
-  default     = null
-}
-
-variable "autoscaler_headroom_num_of_units" {
-  type        = number
-  description = "The number of units to retain as headroom, where each unit has the defined headroom CPU and memory"
-  default     = null
-}
-
-variable "autoscaler_auto_headroom_percentage" {
-  type        = number
-  description = "The auto-headroom percentage. Set a number between 0-200 to control the headroom % of the cluster. Relevant when isAutoConfig=true"
-  default     = 10
-}
-
-variable "ocean_image_id_ssm_parameter" {
-  type        = string
-  description = "SSM Parameter name which contains the AMI ID, defaults to official latest bottlerocket ami"
-  default     = "/aws/service/bottlerocket/aws-ecs-1/x86_64/latest/image_id"
-}
-
-variable "ecs_allow_privileged_containers" {
-  type        = bool
-  description = "Whether or not to allow privileged containers, defaults to true"
-  default     = true
-}
-
-variable "ecs_enable_spot_instance_draining" {
-  type        = bool
-  description = "Whether or not to enable spot instance draining, defaults to true"
-  default     = true
-}
-
-variable "ocean_update_policy_should_roll" {
-  default     = true
-  type        = bool
-  description = "Whether or not a change to the ocean should roll the cluster"
-}
-
-variable "metrics_send_metrics" {
-  default     = false
-  type        = bool
-  description = "Whether or not send anonymous metrics"
 }

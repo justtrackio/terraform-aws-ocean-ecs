@@ -5,7 +5,7 @@ terraform {
       configuration_aliases = [
         aws.owner,
       ]
-      version = ">= 4.40"
+      version = ">= 4.67"
     }
     spotinst = {
       source  = "spotinst/spotinst"

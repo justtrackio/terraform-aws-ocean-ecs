@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.4.0...v1.5.0) (2023-05-12)
+
+
+### Features
+
+* added bottlerocket as default ami ([#24](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/24)) ([f733bb2](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/f733bb29f19aa0701f793e20c9b16113d52a31cd)), closes [#23](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/23)
+
 # Changelog
 
 All notable changes to this project will be documented in this file.

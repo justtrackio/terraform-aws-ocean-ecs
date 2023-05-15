@@ -1,3 +1,10 @@
+## [1.6.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.5.0...v1.6.0) (2023-05-15)
+
+
+### Features
+
+* update_context_versions_variables_outputs ([#25](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/25)) ([612b343](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/612b3438e61a6ece0abec7ee8329de297a47c13c))
+
 ## [1.5.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.4.0...v1.5.0) (2023-05-12)
 
 

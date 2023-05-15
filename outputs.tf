@@ -1,21 +1,16 @@
-output "ecs_cluster_id" {
-  value       = aws_ecs_cluster.default.id
-  description = "Id of the ecs cluster"
-}
-
 output "ecs_cluster_arn" {
   value       = aws_ecs_cluster.default.arn
   description = "Arn of the ecs cluster"
 }
 
+output "ecs_cluster_id" {
+  value       = aws_ecs_cluster.default.id
+  description = "Id of the ecs cluster"
+}
+
 output "ecs_cluster_name" {
   value       = aws_ecs_cluster.default.name
   description = "Name of the ecs cluster"
-}
-
-output "service_discovery_dns_namespace_id" {
-  value       = aws_service_discovery_private_dns_namespace.main.id
-  description = "ID of the discovery namespace"
 }
 
 output "key_pair_private_key" {
@@ -27,4 +22,9 @@ output "key_pair_private_key" {
 output "key_pair_public_key" {
   value       = try(tls_private_key.ecs[0].public_key_openssh, "")
   description = "public key used on the amazon linux 2 instances"
+}
+
+output "service_discovery_dns_namespace_id" {
+  value       = aws_service_discovery_private_dns_namespace.main.id
+  description = "ID of the discovery namespace"
 }

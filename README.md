@@ -6,8 +6,8 @@ Terraform module which creates an spotinst ocean ecs cluster
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.6 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.45.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.67 |
 | <a name="requirement_spotinst"></a> [spotinst](#requirement\_spotinst) | >= 1.87.1 |
 | <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.4 |
 
@@ -15,8 +15,8 @@ Terraform module which creates an spotinst ocean ecs cluster
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.45.0 |
-| <a name="provider_aws.owner"></a> [aws.owner](#provider\_aws.owner) | >= 4.45.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.67 |
+| <a name="provider_aws.owner"></a> [aws.owner](#provider\_aws.owner) | >= 4.67 |
 | <a name="provider_spotinst"></a> [spotinst](#provider\_spotinst) | >= 1.87.1 |
 | <a name="provider_tls"></a> [tls](#provider\_tls) | >= 4.0.4 |
 

@@ -32,7 +32,7 @@ send-metrics = ${var.metrics_send_metrics}
 EOF
 
   security_group_ids   = [module.sg.id]
-  image_id             = data.aws_ssm_parameter.image_id.value
+  image_id             = nonsensitive(data.aws_ssm_parameter.image_id.value)
   iam_instance_profile = aws_iam_instance_profile.default.id
   key_pair             = var.key_pair
   draining_timeout     = 300

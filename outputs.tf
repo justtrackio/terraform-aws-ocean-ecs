@@ -28,3 +28,8 @@ output "service_discovery_dns_namespace_id" {
   value       = aws_service_discovery_private_dns_namespace.main.id
   description = "ID of the discovery namespace"
 }
+
+output "service_discovery_dns_namespace_hosted_zone_id" {
+  value       = aws_service_discovery_private_dns_namespace.main.hosted_zone
+  description = "Hosted zone id of the discovery namespace"
+}

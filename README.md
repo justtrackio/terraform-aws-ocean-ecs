@@ -100,5 +100,6 @@ Terraform module which creates an spotinst ocean ecs cluster
 | <a name="output_ecs_cluster_name"></a> [ecs\_cluster\_name](#output\_ecs\_cluster\_name) | Name of the ecs cluster |
 | <a name="output_key_pair_private_key"></a> [key\_pair\_private\_key](#output\_key\_pair\_private\_key) | private key for allowing to connect to the amazon linux 2 instances |
 | <a name="output_key_pair_public_key"></a> [key\_pair\_public\_key](#output\_key\_pair\_public\_key) | public key used on the amazon linux 2 instances |
+| <a name="output_service_discovery_dns_namespace_hosted_zone_id"></a> [service\_discovery\_dns\_namespace\_hosted\_zone\_id](#output\_service\_discovery\_dns\_namespace\_hosted\_zone\_id) | Hosted zone id of the discovery namespace |
 | <a name="output_service_discovery_dns_namespace_id"></a> [service\_discovery\_dns\_namespace\_id](#output\_service\_discovery\_dns\_namespace\_id) | ID of the discovery namespace |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

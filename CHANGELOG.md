@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.6.0...v1.7.0) (2024-04-09)
+
+
+### Features
+
+* added service discovery hosted zone id to outputs ([#56](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/56)) ([b1ede9f](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/b1ede9ff5ccb410c8a5e1e5f48c9f15f9985ebbc))
+
 ## [1.6.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.5.0...v1.6.0) (2023-05-15)
 
 

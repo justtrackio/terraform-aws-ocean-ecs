@@ -38,6 +38,11 @@ EOF
   draining_timeout     = 300
   ebs_optimized        = true
 
+  instance_metadata_options {
+    http_tokens                 = "required"
+    http_put_response_hop_limit = 2
+  }
+
   autoscaler {
     is_enabled               = true
     is_auto_config           = local.is_auto_config

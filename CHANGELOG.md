@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.7.0...v1.8.0) (2024-06-05)
+
+
+### Features
+
+* added IMDSv2 as default for EC2 instances ([#63](https://github.com/justtrackio/terraform-aws-ocean-ecs/issues/63)) ([df309a8](https://github.com/justtrackio/terraform-aws-ocean-ecs/commit/df309a81ace553164cb44bf8d14f1c5601c60dda))
+
 ## [1.7.0](https://github.com/justtrackio/terraform-aws-ocean-ecs/compare/v1.6.0...v1.7.0) (2024-04-09)
 
 

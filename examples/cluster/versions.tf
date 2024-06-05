@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = ">= 4.67"
+      version = ">= 5.52.0"
       configuration_aliases = [
         aws.owner,
       ]
@@ -10,7 +10,7 @@ terraform {
 
     spotinst = {
       source  = "spotinst/spotinst"
-      version = "1.140.0"
+      version = "1.175.0"
     }
   }
 
